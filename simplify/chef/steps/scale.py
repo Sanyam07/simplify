@@ -62,11 +62,13 @@ class Scale(ChefTechnique):
     def draft(self):
         super().draft()
         self.default_parameters = {
-            'bins': {'encode': 'ordinal',
-                        'strategy': 'uniform',
-                        'n_bins': 5},
-            'gauss': {'standardize': False,
-                        'copy': False},
+            'bins': {
+                'encode': 'ordinal',
+                'strategy': 'uniform',
+                'n_bins': 5},
+            'gauss': {
+                'standardize': False,
+                'copy': False},
             'maxabs': {'copy': False},
             'minmax': {'copy': False},
             'normalize': {'copy': False},

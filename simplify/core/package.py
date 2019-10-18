@@ -1,5 +1,5 @@
 """
-.. module:: iterable
+.. module:: package
 :synopsis: iterable builder and container
 :author: Corey Rayburn Yung
 :copyright: 2019
@@ -177,21 +177,21 @@ class SimpleComparer(SimpleClass):
         return self
 
     """ Core siMpLify methods """
-    
+
     def draft(self):
         """ Declares defaults for class."""
         super().draft()
         if getattr(self, self.comparer_iterable) is None:
             setattr(self, self.comparer_iterable, {})
         return self
-    
+
     def edit_comparer(self, comparers):
-        """Adds a comparer or list of comparers to the attribute named in 
+        """Adds a comparer or list of comparers to the attribute named in
         'comparer_iterable'.
 
         Args:
-            comparers(dict(str: SimplePlan or list(dict(str: SimplePlan)): 
-                plans(s) to be added to the attribute named in 
+            comparers(dict(str: SimplePlan or list(dict(str: SimplePlan)):
+                plans(s) to be added to the attribute named in
                 'comparer_iterable'.
         """
         if isinstance(comparers, dict):
@@ -200,7 +200,7 @@ class SimpleComparer(SimpleClass):
             for comparer in comparers:
                 getattr(self, self.comparer_iterable).update(comparers)
         return self
-        
+
     def publish(self):
         super().publish()
         setattr(self.comparer, 'options', self.options)
@@ -215,7 +215,7 @@ class SimpleComparer(SimpleClass):
             setattr(self, step, self.options[step](
                 technique = self.steps[step]))
         return self
-    
+
     def implement(self, *args, **kwargs):
         """Method that implements all of the publishd objects with the passed
         args and kwargs.
@@ -268,10 +268,10 @@ def SimpleSequencer(SimplePackage):
 
     def __post_init__(self):
         super().__post_init__()
-        return self    
+        return self
 
     """ Core siMpLify methods """
-    
+
     def publish(self):
         super().publish()
         for step in self.sequence:
